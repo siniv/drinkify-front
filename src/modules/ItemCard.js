@@ -7,12 +7,14 @@ class ItemCard extends Component {
         return (
             <div>
                 <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Img variant="top" src="/images/drill.jpg" />
                     <Card.Body>
-                        <Card.Title>{this.props.items.name}</Card.Title>
+                        <Card.Title>{this.props.item.name}</Card.Title>
+
                         <Card.Text>
-                            {this.props.items.description}
+                            {this.props.item.description}
                         </Card.Text>
+                        <Card.Text>{this.props.item.category}</Card.Text>
                         <Button variant="primary">Haluan lainata</Button>
                     </Card.Body>
                 </Card>

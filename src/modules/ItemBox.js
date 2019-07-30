@@ -13,11 +13,8 @@ class ItemBox extends Component {
             this.setState({items: list});
         });
     };
-    uusiQuote = (uusisanonta) => {
-        /*  luosanonta(uusisanonta, function () {
-              this.haeListaJaPaivita();
-          }.bind(this));*/
-        createItem(uusisanonta, ()=>{
+    newItem = (newitem) => {
+        createItem(newitem, ()=>{
             this.getListAndUpdate();
         })
     }
@@ -33,7 +30,7 @@ class ItemBox extends Component {
             <div>
 
                 <div className="itembox">
-                    <ItemForm lisaaSanonta={this.uusiQuote}/>
+                    <ItemForm lisaaSanonta={this.newItem}/>
                     {/*<HenkiloList sanonnat={this.state.quotet} poisto={this.poistaQuote}/>*/}
                     <ItemList items={this.state.items}/>
                 </div>

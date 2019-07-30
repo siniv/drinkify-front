@@ -24,6 +24,8 @@ class Navigation extends Component {
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
+
+                {/*routing harjoituksesta pohja: */}
                 {/*<Navbar className="omanav">*/}
                 {/*    <Navbar.Brand href="/">Quotes</Navbar.Brand>*/}
                 {/*    <Nav className="mr-auto">*/}

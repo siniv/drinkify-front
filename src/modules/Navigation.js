@@ -8,7 +8,7 @@ class Navigation extends Component {
         return (
             <div>
                 <Navbar bg="light" expand="lg">
-                    <Navbar.Brand href="#home"><img src="../images/background.jpg" /></Navbar.Brand>
+                    <Navbar.Brand href="#home"><img alt="lainaksi.fi" src="/images/logoblack.png" height="51" width="200"/></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">

@@ -1,26 +1,26 @@
 import React, {Component} from 'react';
-import {getItems} from "./serviceAxios";
-import ItemCard from "./ItemCard";
+import {createItem, getItems} from "./serviceAxios";
+import ItemList from "./ItemList";
+import ItemForm from "./ItemForm";
 
 class ItemBox extends Component {
     state = {items: []}
     componentDidMount() {
-        this.haeListaJaPaivita();
+        this.getListAndUpdate();
     }
-    haeListaJaPaivita = () => {
-
-        getItems(lista=>{
-            this.setState({items: lista});
+    getListAndUpdate = () => {
+        getItems(list=>{
+            this.setState({items: list});
         });
     };
-    // uusiQuote = (uusisanonta) => {
-    //     /*  luosanonta(uusisanonta, function () {
-    //           this.haeListaJaPaivita();
-    //       }.bind(this));*/
-    //     luosanonta(uusisanonta, ()=>{
-    //         this.haeListaJaPaivita();
-    //     })
-    // }
+    uusiQuote = (uusisanonta) => {
+        /*  luosanonta(uusisanonta, function () {
+              this.haeListaJaPaivita();
+          }.bind(this));*/
+        createItem(uusisanonta, ()=>{
+            this.getListAndUpdate();
+        })
+    }
     // poistaQuote = (poistettavanId) => {
     //     poistaSanonta(poistettavanId)
     //         .then((response)=> {
@@ -33,9 +33,9 @@ class ItemBox extends Component {
             <div>
 
                 <div className="itembox">
-                    {/*<HenkiloForm lisaaSanonta={this.uusiQuote}/>*/}
+                    <ItemForm lisaaSanonta={this.uusiQuote}/>
                     {/*<HenkiloList sanonnat={this.state.quotet} poisto={this.poistaQuote}/>*/}
-                    <ItemCard items={this.state.items}/>
+                    <ItemList items={this.state.items}/>
                 </div>
             </div>);
     }

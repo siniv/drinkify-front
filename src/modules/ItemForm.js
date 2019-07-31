@@ -17,7 +17,7 @@ class ItemForm extends Component {
     }
     send = (e) => {
         e.preventDefault();
-        this.props.lisaaSanonta(this.state);
+        this.props.addItem(this.state);
         this.setState({name: '',  description: '', category: ''});
     }
     render() {

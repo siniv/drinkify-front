@@ -23,3 +23,11 @@ export function getKuva(callback){
             callback(photos.data.image.data);
         });
 }
+
+export function createKuva(image, callback) {
+    axios.post("/photos/add")
+        .then(function (response) {
+            console.dir(response);
+            callback(response.status);
+        })
+}

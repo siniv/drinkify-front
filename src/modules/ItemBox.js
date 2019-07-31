@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import {createItem, getItems, getKuva} from "./serviceAxios";
+import {createItem, getItems, getKuva, createKuva} from "./serviceAxios";
 import ItemList from "./ItemList";
 import ItemForm from "./ItemForm";
 
 class ItemBox extends Component {
-    state = {items: []}
+    state = {items: [], imageid: ''}
     componentDidMount() {
         this.getListAndUpdate();
         this.haeKuva();
@@ -17,6 +17,12 @@ class ItemBox extends Component {
     newItem = (newitem) => {
         createItem(newitem, ()=>{
             this.getListAndUpdate();
+        })
+    }
+
+    newImage = (newimage) => {
+        createKuva(newimage, ()=>{
+            this.setState({})
         })
     }
     // poistaQuote = (poistettavanId) => {

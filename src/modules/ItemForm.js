@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 
 class ItemForm extends Component {
-    state = {name: '', description: '', category: ''}
+    state = {name: '', description: '', category: '', image:''}
     nameChanged = (e) => {
         this.setState({name: e.target.value});
     }
@@ -15,10 +15,13 @@ class ItemForm extends Component {
     categoryChanged = (e) => {
         this.setState({category: e.target.value});
     }
+    imageChanged = (e) => {
+        this.setState({image: e.target.value});
+    }
     send = (e) => {
         e.preventDefault();
         this.props.addItem(this.state);
-        this.setState({name: '',  description: '', category: ''});
+        this.setState({name: '',  description: '', category: '', image:''});
     }
     render() {
         return (
@@ -27,18 +30,14 @@ class ItemForm extends Component {
                     <Col sm="6">
                     <h2>Lainaa muille!</h2>
                     <br/>
-                    <Form.Group  controlId="formDrinkName">
+                    <Form.Group  controlId="formItemkName">
                         <Form.Label>Tavaran nimi</Form.Label>
                         <Form.Control type="text" placeholder="Syötä nimi" value={this.state.name} onChange={this.nameChanged} />
                     </Form.Group>
-                        <Form.Group controlId="formDrinkRecipe">
+                        <Form.Group controlId="formItenDescription">
                             <Form.Label>Tavaran kuvaus</Form.Label>
                             <Form.Control as="textarea" rows="3" value={this.state.description} onChange={this.descriptionChanged}/>
                         </Form.Group>
-
-                    {/*<Form.Group controlId="formBasicChecbox">*/}
-                    {/*    <Form.Check type="checkbox" label="Check me out" />*/}
-                    {/*</Form.Group>*/}
                     <Form.Group controlId="formGridState">
                         <Form.Label>Kategoria</Form.Label>
                         <Form.Control as="select" value={this.state.category}onChange={this.categoryChanged}>
@@ -49,6 +48,14 @@ class ItemForm extends Component {
                             <option>Muu</option>
                         </Form.Control>
                     </Form.Group>
+                        <Form.Group controlId="formItemPicture">
+                        <Form.Label>Lisää kuva  </Form.Label>
+                            <input type="file" name="image" accept="image/*" value={this.state.image}onChange={this.imageChanged}/>
+                        </Form.Group>
+                        {/*<form method="POST" action="/photos/add" encType="multipart/form-data">*/}
+                        {/*    Image:<input type="file" name="image" accept="image/*"/>*/}
+                        {/*    <input type="submit" value="Upload"/>*/}
+                        {/*</form>*/}
 
                     <Button variant="primary" type="submit">
                         Lisää

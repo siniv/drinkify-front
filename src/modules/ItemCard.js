@@ -2,8 +2,14 @@ import React, {Component} from 'react';
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
+
 class ItemCard extends Component {
+    renderAvailability = (available) => {
+        if (available) return <Card.Text className="available">Vapaa</Card.Text>
+        else return <Card.Text className="notavailable">Varattu</Card.Text>
+    };
     render() {
+        console.log(this.props.item);
         return (
             <div>
                 <Card style={{ width: '18rem' }}>
@@ -15,6 +21,7 @@ class ItemCard extends Component {
                             {this.props.item.description}
                         </Card.Text>
                         <Card.Text>{this.props.item.category}</Card.Text>
+                        {this.renderAvailability(this.props.item.available)}
                         <Button variant="primary">Haluan lainata</Button>
                     </Card.Body>
                 </Card>

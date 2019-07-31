@@ -25,5 +25,14 @@ form{
   text-align: left;
 }
 
+.available{
+  background-color: lawngreen;
+  color:white;
+}
+.notavailable{
+  background-color: red;
+  color: white;
+}
+
 
 

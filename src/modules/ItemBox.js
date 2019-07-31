@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {createItem, getItems} from "./serviceAxios";
+import {createItem, getItems, getKuva} from "./serviceAxios";
 import ItemList from "./ItemList";
 import ItemForm from "./ItemForm";
 
@@ -7,6 +7,7 @@ class ItemBox extends Component {
     state = {items: []}
     componentDidMount() {
         this.getListAndUpdate();
+        this.haeKuva();
     }
     getListAndUpdate = () => {
         getItems(list=>{
@@ -25,12 +26,25 @@ class ItemBox extends Component {
     //         });
     // }
 
+    haeKuva = () => {
+        var img = document.getElementById("image");
+        getKuva(kuva=>{
+
+            img.setAttribute("src", "data:image/png;base64," + kuva);
+            console.log(kuva)
+            console.log(img)
+        });
+        return img
+    };
+
     render() {
+
         return (
             <div>
 
                 <div className="itembox">
-                    <ItemForm lisaaSanonta={this.newItem}/>
+                    <ItemForm addItem={this.newItem}/>
+                    <img id="image" tämän pitäisi tulla kuva/>
                     {/*<HenkiloList sanonnat={this.state.quotet} poisto={this.poistaQuote}/>*/}
                     <ItemList items={this.state.items}/>
                 </div>

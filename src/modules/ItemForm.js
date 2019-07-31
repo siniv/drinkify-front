@@ -26,7 +26,7 @@ class ItemForm extends Component {
                 <Form onSubmit={this.send}>
                     <Col sm="6">
                     <h2>Lainaa muille!</h2>
-                    <br/>
+                    {/*<br/>*/}
                     <Form.Group  controlId="formItemkName">
                         <Form.Label>Tavaran nimi</Form.Label>
                         <Form.Control type="text" placeholder="Syötä nimi" value={this.state.name} onChange={this.nameChanged} />

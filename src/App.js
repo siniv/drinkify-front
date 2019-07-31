@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Navigation from "./modules/Navigation";
 import ItemBox from "./modules/ItemBox";
+import ItemSort from "./modules/ItemSort";
 
 
 
@@ -10,6 +11,7 @@ function App() {
     <div className="App">
         <Navigation/>
       <ItemBox/>
+      <ItemSort/>
     </div>
   );
 }

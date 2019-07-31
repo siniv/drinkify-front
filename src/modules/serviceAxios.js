@@ -8,6 +8,14 @@ export function getItems(callback) {
         });
 }
 
+// Tämä hakee Itemsit kategoriavalinnan mukaan. ItemSort lähettää kategorian tähän.
+export function getSortedItems(callback, category) {
+    axios.get(baseurl + '\\byCategory?haku=' + category)
+        .then(function (sorteditems) {
+            callback(sorteditems.data);
+        });
+}
+
 export function createItem(item, callback) {
     axios.post(baseurl, item)
         .then(function (response) {
@@ -19,7 +27,7 @@ export function createItem(item, callback) {
 export function getKuva(callback){
     axios.get("/photos/5d414dfd3ad8603fb88d093b")
         .then(function(photos) {
-            console.log(photos)
+            console.log(photos);
             callback(photos.data.image.data);
         });
 }

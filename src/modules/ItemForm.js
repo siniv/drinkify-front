@@ -43,7 +43,7 @@ class ItemForm extends Component {
                         <Form.Label>Kategoria</Form.Label>
                         <Form.Control as="select" value={this.state.category}onChange={this.categoryChanged}>
                             <option>Valitse...</option>
-                            <option>Työkalu</option>
+                            <option>Tyokalu</option>
                             <option>Kodinkone</option>
                             <option>Astia</option>
                             <option>Muu</option>

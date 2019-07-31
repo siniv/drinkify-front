@@ -7,10 +7,10 @@ class ItemSortList extends Component {
     render() {
         var sorted = this.props.sorteditems.reverse()
             .map(function(sortedItem) {
-                return (<ItemCard sortedItem={sortedItem} key={sortedItem.id}/>);
+                return (<ItemCard item={sortedItem} key={sortedItem.id}/>);
             });
         return(
-            <div>
+            <div id="SortedDeck">
                 <Container>
                     <CardDeck className="itemsortlist">
                         {sorted}

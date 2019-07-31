@@ -2,10 +2,23 @@ import React, {Component} from 'react';
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
+import ItemList from "./ItemList";
+import {getItems} from "./serviceAxios";
+
 
 class ItemSortForm extends Component {
-    state = {category: ''};
-
+    state = {
+        category: '',
+        //items: []
+    };
+    // componentDidMount() {
+    //     this.getListAndUpdate()
+    // }
+    // getListAndUpdate = () => {
+    //     getItems(list=>{
+    //         this.setState({items: list});
+    //     });
+    // };
     categoryChanged = (e) => {
         this.setState({category: e.target.value});
         console.log(e.target.value)
@@ -22,8 +35,7 @@ class ItemSortForm extends Component {
             <div>
                 <Form onSubmit={this.send}>
                     <Col sm="6">
-                        <h2>Sorttaa lista!</h2>
-                        <br/>
+                        <h2>Selaa lainattavia tuotteita</h2>
                         <Form.Group controlId="formGridState">
                             <Form.Label>Kategoria</Form.Label>
                             <Form.Control as="select" value={this.state.category}onChange={this.categoryChanged}>
@@ -40,6 +52,9 @@ class ItemSortForm extends Component {
                         </Button>
                     </Col>
                 </Form>
+                {/*<div>*/}
+                {/*    <ItemList items={this.state.items}/>*/}
+                {/*</div>*/}
             </div>
         );
     }

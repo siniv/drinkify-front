@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import ItemCard from "./ItemCard";
+import CardDeck from 'react-bootstrap/CardDeck';
+import Col from "react-bootstrap/Col";
 
 class ItemList extends Component {
     render() {
@@ -12,9 +14,9 @@ class ItemList extends Component {
     // }.bind(this));
         return(
             <div>
-                <ul className="itemlist">
+                <CardDeck className="itemlist">
                     {all}
-                </ul>
+                </CardDeck>
             </div>
         );
     }

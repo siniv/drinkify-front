@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 
 class ItemForm extends Component {
-    state = {name: '', description: '', category: '', image:''}
+    state = {name: '', description: '', category: ''}
     nameChanged = (e) => {
         this.setState({name: e.target.value});
     }
@@ -15,13 +15,10 @@ class ItemForm extends Component {
     categoryChanged = (e) => {
         this.setState({category: e.target.value});
     }
-    imageChanged = (e) => {
-        this.setState({image: e.target.value});
-    }
     send = (e) => {
         e.preventDefault();
         this.props.addItem(this.state);
-        this.setState({name: '',  description: '', category: '', image:''});
+        this.setState({name: '',  description: '', category: ''});
     }
     render() {
         return (
@@ -48,15 +45,6 @@ class ItemForm extends Component {
                             <option>Muu</option>
                         </Form.Control>
                     </Form.Group>
-                        <Form.Group controlId="formItemPicture">
-                        <Form.Label>Lisää kuva  </Form.Label>
-                            <input type="file" name="image" accept="image/*" value={this.state.image}onChange={this.imageChanged}/>
-                        </Form.Group>
-                        {/*<form method="POST" action="/photos/add" encType="multipart/form-data">*/}
-                        {/*    Image:<input type="file" name="image" accept="image/*"/>*/}
-                        {/*    <input type="submit" value="Upload"/>*/}
-                        {/*</form>*/}
-
                     <Button variant="primary" type="submit">
                         Lisää
                     </Button>

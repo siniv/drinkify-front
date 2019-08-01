@@ -51,7 +51,7 @@ class ItemForm extends Component {
                             <option>Muu</option>
                         </Form.Control>
                     </Form.Group>
-                    <Button variant="primary" type="submit">
+                    <Button variant="secondary" type="submit">
                         Lisää
                     </Button>
                     </Col>

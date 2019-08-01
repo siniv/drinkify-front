@@ -22,8 +22,8 @@ class ItemCard extends Component {
     // Jos vapaana, niin "Haluan lainata" -nappi tekee lainauksen.
     // Jos varattuna, niin "Peru laina"-nappi vapauttaa varauksen.
     renderButton = (available) => {
-        if (available) return <Button variant="primary" onClick={this.update}>Haluan lainata</Button>
-        else return <Button variant="primary" onClick={this.update}>Peru laina</Button>
+        if (available) return <Button variant="secondary" onClick={this.update}>Haluan lainata</Button>
+        else return <Button variant="secondary" onClick={this.update}>Peru laina</Button>
     }
 
     // Kortti näyttää teemakuvan sen mukaan, minkä kategorian käyttäjä on valinnut tavaralleen:

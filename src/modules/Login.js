@@ -69,6 +69,7 @@ export default class Login extends Component {
                     </Form.Group>
                     <Button
                         block
+                        variant="secondary"
                         bsSize="large"
                         disabled={!this.validateForm()}
                         type="submit"

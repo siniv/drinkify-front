@@ -50,7 +50,7 @@ class ItemSortForm extends Component {
                             </Form.Control>
                         </Form.Group>
 
-                        <Button variant="primary" type="submit">
+                        <Button variant="secondary" type="submit">
                             Hae
                         </Button>
                     </Col>

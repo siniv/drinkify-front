@@ -35,12 +35,10 @@ class Home extends Component {
                 <h1>Tervetuloa Lainaksi - sivuille!</h1>
                 <p>Lainaa ja anna lainaksi. Yhteisöllisyyttää, jakamistaloutta ja hiilijalanjälki.</p>
 
-                <ItemList items={this.state.items} updateItem={this.updateItem}/>
-
                 </Container>
                 </Jumbotron>
 
-                <ItemList items={this.state.items}/>
+                <ItemList items={this.state.items} updateItem={this.updateItem}/>
 
             </div>
         );

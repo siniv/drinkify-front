@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {createItem, getItems} from "./serviceAxios";
 import ItemForm from "./ItemForm";
 import ItemList from "./ItemList";
+import Container from "react-bootstrap/Container";
+import Jumbotron from "react-bootstrap/Jumbotron";
 
 // Kotisivu, joka palauttaa listan kaikista palvelussa olevista tuotteista.
 
@@ -20,9 +22,13 @@ class Home extends Component {
 
         return (
             <div className="home">
+                <Jumbotron fluid>
+                <Container>
                 <h2>Tervetuloa Lainaksi - sivuille!</h2>
                 <p>Lainaa ja anna lainaksi. Yhteisöllisyyttää, jakamistaloutta ja hiilijalanjälki.</p>
-                <h2>Tervetuloa Lainaksi - sivuille, osa kaksi!</h2>
+                </Container>
+                </Jumbotron>
+
                 <ItemList items={this.state.items}/>
             </div>
         );

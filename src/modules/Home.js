@@ -24,7 +24,7 @@ class Home extends Component {
             <div className="home">
                 <Jumbotron fluid>
                 <Container>
-                <h2>Tervetuloa Lainaksi - sivuille!</h2>
+                <h1>Tervetuloa Lainaksi - sivuille!</h1>
                 <p>Lainaa ja anna lainaksi. Yhteisöllisyyttää, jakamistaloutta ja hiilijalanjälki.</p>
                 </Container>
                 </Jumbotron>

@@ -15,21 +15,33 @@ import Home from "./modules/Home";
 
 class App extends Component {
 
-    constructor(props) {
-        super(props);
+    // constructor(props) {
+    //     super(props);
 
-        this.state = {
+        state = {
             email: "",
             password: "",
             id:""
         };
+    //
+
+    componentDidMount() {
+        // this.loggedInUser()
+        var email = JSON.stringify(sessionStorage.getItem("email"));
+        console.log(email)
+        console.log(sessionStorage.getItem("email"))
+        this.setState({email: email})
+        console.log(this.state)
+        this.setState({email: sessionStorage.getItem("email"), password: sessionStorage.getItem("password"), id: sessionStorage.getItem("id")})
+        console.log(this.state);
     }
 
     loggedInUser() {
-        this.setState()
+        this.setState({email: sessionStorage.getItem("email"), password: sessionStorage.getItem("password"), id: sessionStorage.getItem("id")})
     }
 
     render() {
+
         return (
             <div className="App">
 
@@ -41,8 +53,6 @@ class App extends Component {
                             <Route path="/selaa" component={ItemSort} />
                             <Route path="/lainaamuille" component={ItemBox} />
                             <Route path="/login" exact component={Login} />
-
-
                         </Switch>
                     </div>
                 </Router>

@@ -12,11 +12,13 @@ export default class Login extends Component {
             password: "",
             id: ""
         };
+        // this.handlePageChange = this.handlePageChange.bind(this);
     }
 
     getUserByEmail = (email) => {
         getUser(user=>{
             this.setState({ email: user.data.email, password: user.data.password, id: user.data.id});
+            console.log(this.state);
             sessionStorage.setItem("email", this.state.email);
             sessionStorage.setItem("password", this.state.password);
             sessionStorage.setItem("id", this.state.id);
@@ -37,7 +39,11 @@ export default class Login extends Component {
         event.preventDefault();
         console.log(this.state);
         this.getUserByEmail(this.state.email)
+        this.handlePageChange()
 
+    }
+    handlePageChange() {
+        window.location = "http://localhost:3000/lainaamuille";
     }
 
     render() {

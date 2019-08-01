@@ -4,9 +4,15 @@ import ItemList from "./ItemList";
 import ItemForm from "./ItemForm";
 
 class ItemBox extends Component {
-    state = {items: []}
+    state = {
+        items: [],
+        email: "",
+        password: "",
+        id:""}
+
     componentDidMount() {
         this.getListAndUpdate()
+        this.loggedInUser()
     }
     getListAndUpdate = () => {
         getItems(list=>{
@@ -17,6 +23,10 @@ class ItemBox extends Component {
         createItem(newitem, ()=>{
             this.getListAndUpdate();
         })
+    }
+    loggedInUser() {
+        this.setState({email: sessionStorage.getItem("email"), password: sessionStorage.getItem("password"), id: sessionStorage.getItem("id")})
+        console.log(this.state);
     }
     // poistaQuote = (poistettavanId) => {
     //     poistaSanonta(poistettavanId)
@@ -32,7 +42,6 @@ class ItemBox extends Component {
 
                 {sessionStorage.getItem("email") != undefined ? <div className="itembox">
                     <ItemForm addItem={this.newItem}/>
-                    {/*<HenkiloList sanonnat={this.state.quotet} poisto={this.poistaQuote}/>*/}
                     <ItemList items={this.state.items}/>
                 </div> : <div></div>}
             </div>);

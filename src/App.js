@@ -3,14 +3,14 @@ import './App.css';
 import Navigation from "./modules/Navigation";
 import ItemBox from "./modules/ItemBox";
 import ItemSort from "./modules/ItemSort";
-import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
-import Login from "./modules/Login";
-{/*<div className="App">*/}
-{/*    <Navigation/>*/}
 
-{/*  <ItemBox/>*/}
-{/*  <ItemSort/>*/}
-{/*</div>*/}
+
+import Login from "./modules/Login";
+
+import {BrowserRouter as Router, Route, Switch, Redirect, Link} from 'react-router-dom';
+import Nav from "react-bootstrap/Nav";
+import Home from "./modules/Home";
+
 
 
 class App extends Component {
@@ -33,11 +33,12 @@ class App extends Component {
                     <div>
                         <Navigation />
                         <Switch>
-                            <Route exact path="/" component={ItemSort} />
-                            {/*<Route path="/quotes" component={QuoteList} />*/}
+                            <Route exact path="/" component={Home} />
+                            <Route path="/selaa" component={ItemSort} />
                             <Route path="/lainaamuille" component={ItemBox} />
-                            {/*<Route path="/details" component={QuoteDetails} />*/}
                             <Route path="/login" exact component={Login} />
+
+
                         </Switch>
                     </div>
                 </Router>

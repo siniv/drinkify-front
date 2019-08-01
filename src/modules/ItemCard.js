@@ -22,11 +22,12 @@ class ItemCard extends Component {
 
     chooseImage = () => {
         if(this.props.item.category === "Tyokalu"){
-            return <Card.Img variant="top" src="/images/drill.jpg" />
+            return <Card.Img variant="top" src="/images/drill.jpg"/>
+
         }else if(this.props.item.category === "Astia"){
             return <Card.Img variant="top" src="/images/champagnebowl.jpg" />
         }else if(this.props.item.category === "Muu"){
-            return <Card.Img variant="top" src="/images/car.jpg" />
+            return <Card.Img variant="top" src="/images/car_square.jpg" />
         }else if(this.props.item.category === "Kodinkone"){
             return <Card.Img variant="top" src="/images/coffeemaker.jpg" />
         }

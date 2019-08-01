@@ -17,6 +17,7 @@ class Navigation extends Component {
                             <Nav.Item><Nav.Link tag={Link} href="/">Kotisivu</Nav.Link></Nav.Item>
                             <Nav.Item><Nav.Link tag={Link} href="/selaa">Selaa listaa</Nav.Link></Nav.Item>
                             <Nav.Item><Nav.Link tag={Link} href="/lainaamuille">Lainaa muille</Nav.Link></Nav.Item>
+                            <Nav.Item><Nav.Link tag={Link} href="/login">Kirjaudu sisään</Nav.Link></Nav.Item>
                             {/*<NavDropdown title="Dropdown" id="basic-nav-dropdown">*/}
                             {/*    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>*/}
                             {/*    <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>*/}

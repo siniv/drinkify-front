@@ -46,5 +46,14 @@ form{
   margin-left: 8px;
 }
 
+.Login {
+  padding: 60px 0;
+}
+
+.Login form {
+  margin: 0 auto;
+  max-width: 320px;
+}
+
 
 

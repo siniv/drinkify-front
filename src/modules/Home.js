@@ -21,8 +21,8 @@ class Home extends Component {
         return (
             <div className="home">
                 <h2>Tervetuloa Lainaksi - sivuille!</h2>
-                <p> testi...</p>
                 <p>Lainaa ja anna lainaksi. Yhteisöllisyyttää, jakamistaloutta ja hiilijalanjälki.</p>
+                <h2>Tervetuloa Lainaksi - sivuille, osa kaksi!</h2>
                 <ItemList items={this.state.items}/>
             </div>
         );

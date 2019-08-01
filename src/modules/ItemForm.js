@@ -3,6 +3,12 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 
+// Lomake, jolla uusi tavara syötetään sisään järjestelmään.
+// 2 x avoin tekstikenttä, jonne tekstimuotoiset nimi ja kuvaus.
+// Drop down menu, josta valitaan tuotekategoria.
+// HUOM! Kategorioiden nimien täytyy olla samat, kuin kategorian mukaan sorttauksessa (ItemSortForm).
+// HUOM! Ei ääkkösiä, koska kategorian nimi menee osaksi URL:ia / ServiceAxios. (Voisi kiertää esim category ID:llä.)
+
 class ItemForm extends Component {
     state = {name: '', description: '', category: ''}
     nameChanged = (e) => {

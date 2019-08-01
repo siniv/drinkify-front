@@ -3,6 +3,7 @@ import ItemCard from "./ItemCard";
 import CardDeck from 'react-bootstrap/CardDeck';
 import Container from "react-bootstrap/Container";
 
+// Rakentaa listan valitun kategorian tavaroista ja esittää sen CardDeckinä.
 class ItemSortList extends Component {
     render() {
         const self = this;

@@ -14,7 +14,8 @@ class Navigation extends Component {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Item><Nav.Link tag={Link} href="/">Selaa</Nav.Link></Nav.Item>
+                            <Nav.Item><Nav.Link tag={Link} href="/">Kotisivu</Nav.Link></Nav.Item>
+                            <Nav.Item><Nav.Link tag={Link} href="/selaa">Selaa listaa</Nav.Link></Nav.Item>
                             <Nav.Item><Nav.Link tag={Link} href="/lainaamuille">Lainaa muille</Nav.Link></Nav.Item>
                             {/*<NavDropdown title="Dropdown" id="basic-nav-dropdown">*/}
                             {/*    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>*/}

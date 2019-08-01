@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown"; //saatetaan tarvita vielä
-import {Link} from "react-router-dom";
-import Button from "react-bootstrap/Button";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 // Täällä syntyy sivujen navigaatio.
 
@@ -17,13 +15,13 @@ class Navigation extends Component {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Item><Nav.Link tag={Link} href="/">Kotisivu</Nav.Link></Nav.Item>
-                            <Nav.Item><Nav.Link tag={Link} href="/selaa">Selaa listaa</Nav.Link></Nav.Item>
-                            <Nav.Item><Nav.Link tag={Link} href="/lainaamuille">Lainaa muille</Nav.Link></Nav.Item>
+                            <Nav.Item><Nav.Link href="/">Kotisivu</Nav.Link></Nav.Item>
+                            <Nav.Item><Nav.Link href="/selaa">Selaa listaa</Nav.Link></Nav.Item>
+                            <Nav.Item><Nav.Link href="/lainaamuille">Lainaa muille</Nav.Link></Nav.Item>
                             <NavDropdown title="Kirjaudu" id="basic-nav-dropdown">
-                                <Nav.Item><Nav.Link tag={Link} href="/login">Kirjaudu sisään</Nav.Link></Nav.Item>
+                                <Nav.Item><Nav.Link href="/login">Kirjaudu sisään</Nav.Link></Nav.Item>
                                 <NavDropdown.Divider />
-                                <Nav.Item><Nav.Link tag={Link} href="/">Kirjaudu ulos</Nav.Link></Nav.Item>
+                                <Nav.Item><Nav.Link href="/">Kirjaudu ulos</Nav.Link></Nav.Item>
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>

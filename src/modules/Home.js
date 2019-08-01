@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import {createItem, getItems, updateItemAvailability} from "./serviceAxios";
-import ItemForm from "./ItemForm";
+import {getItems, updateItemAvailability} from "./serviceAxios";
 import ItemList from "./ItemList";
 import Container from "react-bootstrap/Container";
 import Jumbotron from "react-bootstrap/Jumbotron";

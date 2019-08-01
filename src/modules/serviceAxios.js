@@ -28,6 +28,6 @@ export function createItem(item, callback) {
 export function getUser(callback, email) {
     axios.get("/api/user/getbyemail/" + email)
         .then(function (user) {
-            callback(user.data);
+            callback(user);
         });
 }

@@ -3,42 +3,46 @@ import React, {Component} from 'react';
 import {createItem, getItems, updateItemAvailability} from "./serviceAxios";
 import ItemList from "./ItemList";
 import ItemForm from "./ItemForm";
-import Button from "react-bootstrap/Button";
 
 class ItemBox extends Component {
     state = {
         items: [],
-        email: "",
-        password: "",
-        id:""}
+    };
 
     componentDidMount() {
         this.getListAndUpdate()
-    }
+    };
+
+    //haetaan lista ja päivitetään sivu
     getListAndUpdate = () => {
         getItems(list=>{
             this.setState({items: list});
         });
     };
-    newItem = (newitem) => {
-        createItem(newitem, ()=>{
+
+    //lisätään uusi item tietokantaan, mukana myös käyttäjän id
+    newItem = (newitem, id) => {
+        const obj = {
+            ...newitem,
+            owner: {
+                id: id
+            }
+        }
+        createItem(obj, ()=>{
             this.getListAndUpdate();
         })
-    }
+    };
 
+    //päivitetään onko item vapaana
     updateItem = (itemId) => {
         updateItemAvailability(itemId)
             .then((response)=> {
                 this.getListAndUpdate();
                 console.log(response);
         })
-    }
+    };
 
-    loggedInUser() {
-        this.setState({email: sessionStorage.getItem("email"), password: sessionStorage.getItem("password"), id: sessionStorage.getItem("id")})
-        console.log(this.state);
-    }
-
+    // tulee mahd. myöhemmin
     // poistaQuote = (poistettavanId) => {
     //     poistaSanonta(poistettavanId)
     //         .then((response)=> {
@@ -47,12 +51,13 @@ class ItemBox extends Component {
     // }
 
     render() {
-
+        const email = sessionStorage.getItem("email")
+        const items = this.state.items.filter(item => item.owner.email === email)
         return (
             <div>
-                {sessionStorage.getItem("email") != undefined ? <div className="itembox">
-                    <ItemForm addItem={this.newItem}/>
-                    <ItemList items={this.state.items} updateItem={this.updateItem}/>
+                {sessionStorage.getItem("email") !== undefined ? <div className="itembox">
+                    <ItemForm addItem={this.newItem} />
+                    <ItemList items={items} updateItem={this.updateItem}/>
                 </div> : <div></div>}
             </div>);
     }

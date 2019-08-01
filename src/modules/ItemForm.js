@@ -23,7 +23,8 @@ class ItemForm extends Component {
     }
     send = (e) => {
         e.preventDefault();
-        this.props.addItem(this.state);
+        const id = sessionStorage.getItem("id")
+        this.props.addItem(this.state, id);
         this.setState({name: '',  description: '', category: ''});
     }
     render() {

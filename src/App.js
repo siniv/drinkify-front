@@ -6,36 +6,10 @@ import ItemSort from "./modules/ItemSort";
 
 import Login from "./modules/Login";
 
-import {BrowserRouter as Router, Route, Switch, Redirect, Link} from 'react-router-dom';
-import Nav from "react-bootstrap/Nav";
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from "./modules/Home";
 
 class App extends Component {
-
-    // constructor(props) {
-    //     super(props);
-
-        state = {
-            email: "",
-            password: "",
-            id: ""
-        };
-    // }
-
-    // componentDidMount() {
-    //     // this.loggedInUser()
-    //     var email = JSON.stringify(sessionStorage.getItem("email"));
-    //     console.log(email)
-    //     console.log(sessionStorage.getItem("email"))
-    //     this.setState({email: email})
-    //     console.log(this.state)
-    //     this.setState({email: sessionStorage.getItem("email"), password: sessionStorage.getItem("password"), id: sessionStorage.getItem("id")})
-    //     console.log(this.state);
-    // }
-
-    loggedInUser() {
-        this.setState({email: sessionStorage.getItem("email"), password: sessionStorage.getItem("password"), id: sessionStorage.getItem("id")})
-    }
 
     render() {
 
@@ -52,8 +26,6 @@ class App extends Component {
                         </Switch>
                     </div>
                 </Router>
-
-
             </div>
         );
     }

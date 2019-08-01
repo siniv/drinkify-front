@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
-import {getSortedItems, getUser} from "./serviceAxios";
+import {getUser} from "./serviceAxios";
+
+//login-formi, tarkastetaan tietokannasta löytyykö käyttäjän email + lisätään käyttäjän email, password ja id LocalStorageen ja stateen
 
 export default class Login extends Component {
     constructor(props) {
@@ -12,7 +14,6 @@ export default class Login extends Component {
             password: "",
             id: ""
         };
-        // this.handlePageChange = this.handlePageChange.bind(this);
     }
 
     getUserByEmail = (email) => {
@@ -50,7 +51,7 @@ export default class Login extends Component {
         return (
             <div className="Login">
                 <Form onSubmit={this.handleSubmit}>
-                    <Form.Group controlId="email" bsSize="large">
+                    <Form.Group controlId="email" bssize="large">
                         <Form.Label>Email</Form.Label>
                         <Form.Control
                             autoFocus
@@ -59,7 +60,7 @@ export default class Login extends Component {
                             onChange={this.handleChange}
                         />
                     </Form.Group>
-                    <Form.Group controlId="password" bsSize="large">
+                    <Form.Group controlId="password" bssize="large">
                         <Form.Label>Password</Form.Label>
                         <Form.Control
                             value={this.state.password}
@@ -70,7 +71,7 @@ export default class Login extends Component {
                     <Button
                         block
                         variant="secondary"
-                        bsSize="large"
+                        bssize="large"
                         disabled={!this.validateForm()}
                         type="submit"
                     >

@@ -30,11 +30,11 @@ class ItemBox extends Component {
         return (
             <div>
 
-                <div className="itembox">
+                {sessionStorage.getItem("email") != undefined ? <div className="itembox">
                     <ItemForm addItem={this.newItem}/>
                     {/*<HenkiloList sanonnat={this.state.quotet} poisto={this.poistaQuote}/>*/}
                     <ItemList items={this.state.items}/>
-                </div>
+                </div> : <div></div>}
             </div>);
     }
 }

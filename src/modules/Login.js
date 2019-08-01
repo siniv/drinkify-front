@@ -17,6 +17,9 @@ export default class Login extends Component {
     getUserByEmail = (email) => {
         getUser(user=>{
             this.setState({ email: user.data.email, password: user.data.password, id: user.data.id});
+            sessionStorage.setItem("email", this.state.email);
+            sessionStorage.setItem("password", this.state.password);
+            sessionStorage.setItem("id", this.state.id);
         }, email);
     };
 

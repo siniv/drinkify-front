@@ -25,6 +25,10 @@ class App extends Component {
         };
     }
 
+    loggedInUser() {
+        this.setState()
+    }
+
     render() {
         return (
             <div className="App">

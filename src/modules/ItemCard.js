@@ -23,15 +23,17 @@ class ItemCard extends Component {
         return (
             <div>
                 <Card style={{ width: '18rem' }}>
-                    {this.chooseImage()}
+
                     <Card.Body>
+                        {this.renderAvailability(this.props.item.available)}
+                        {this.chooseImage()}
                         <Card.Title>{this.props.item.name}</Card.Title>
 
                         <Card.Text>
                             {this.props.item.description}
                         </Card.Text>
                         <Card.Text>{this.props.item.category}</Card.Text>
-                        {this.renderAvailability(this.props.item.available)}
+
                         <Button variant="primary">Haluan lainata</Button>
                     </Card.Body>
                 </Card>

@@ -21,20 +21,20 @@ class App extends Component {
         state = {
             email: "",
             password: "",
-            id:""
+            id: ""
         };
-    //
+    // }
 
-    componentDidMount() {
-        // this.loggedInUser()
-        var email = JSON.stringify(sessionStorage.getItem("email"));
-        console.log(email)
-        console.log(sessionStorage.getItem("email"))
-        this.setState({email: email})
-        console.log(this.state)
-        this.setState({email: sessionStorage.getItem("email"), password: sessionStorage.getItem("password"), id: sessionStorage.getItem("id")})
-        console.log(this.state);
-    }
+    // componentDidMount() {
+    //     // this.loggedInUser()
+    //     var email = JSON.stringify(sessionStorage.getItem("email"));
+    //     console.log(email)
+    //     console.log(sessionStorage.getItem("email"))
+    //     this.setState({email: email})
+    //     console.log(this.state)
+    //     this.setState({email: sessionStorage.getItem("email"), password: sessionStorage.getItem("password"), id: sessionStorage.getItem("id")})
+    //     console.log(this.state);
+    // }
 
     loggedInUser() {
         this.setState({email: sessionStorage.getItem("email"), password: sessionStorage.getItem("password"), id: sessionStorage.getItem("id")})
@@ -44,7 +44,6 @@ class App extends Component {
 
         return (
             <div className="App">
-
                 <Router>
                     <div>
                         <Navigation />

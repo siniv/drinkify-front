@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import ItemCard from "./ItemCard";
 import CardDeck from 'react-bootstrap/CardDeck';
-import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 
 class ItemList extends Component {

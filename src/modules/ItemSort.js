@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {getSortedItems} from "./serviceAxios";
+import {getSortedItems, updateItemAvailability} from "./serviceAxios";
 import ItemSortList from "./ItemSortList";
 import ItemSortForm from "./ItemSortForm";
 
@@ -28,13 +28,21 @@ class ItemSort extends Component {
         }, category);
     };
 
+    updateItem = (itemId) => {
+        updateItemAvailability(itemId)
+            .then((response)=> {
+                this.getSortedListAndUpdate();
+                console.log(response);
+            })
+    }
+
     render() {
 
         return (
             <div>
                 <div className="itemsort">
                     <ItemSortForm getSortedListAndUpdate={this.getSortedListAndUpdate}/>
-                    <ItemSortList sorteditems={this.state.sorteditems}/>
+                    <ItemSortList sorteditems={this.state.sorteditems} updateItem={this.updateItem}/>
                 </div>
             </div>);
     }

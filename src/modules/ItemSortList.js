@@ -5,9 +5,10 @@ import Container from "react-bootstrap/Container";
 
 class ItemSortList extends Component {
     render() {
+        const self = this;
         var sorted = this.props.sorteditems.reverse()
             .map(function(sortedItem) {
-                return (<ItemCard item={sortedItem} key={sortedItem.id}/>);
+                return (<ItemCard item={sortedItem} updateItem={self.props.updateItem} key={sortedItem.id}/>);
             });
         return(
             <div id="SortedDeck">

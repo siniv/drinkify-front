@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {createItem, getItems} from "./serviceAxios";
+import {createItem, getItems, updateItemAvailability} from "./serviceAxios";
 import ItemForm from "./ItemForm";
 import ItemList from "./ItemList";
 import Container from "react-bootstrap/Container";
@@ -18,6 +18,14 @@ class Home extends Component {
         });
     };
 
+    updateItem = (itemId) => {
+        updateItemAvailability(itemId)
+            .then((response)=> {
+                this.getListAndUpdate();
+                console.log(response);
+            })
+    }
+
     render() {
 
         return (
@@ -26,10 +34,14 @@ class Home extends Component {
                 <Container>
                 <h1>Tervetuloa Lainaksi - sivuille!</h1>
                 <p>Lainaa ja anna lainaksi. Yhteisöllisyyttää, jakamistaloutta ja hiilijalanjälki.</p>
+
+                <ItemList items={this.state.items} updateItem={this.updateItem}/>
+
                 </Container>
                 </Jumbotron>
 
                 <ItemList items={this.state.items}/>
+
             </div>
         );
     }

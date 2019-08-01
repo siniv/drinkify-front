@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {createItem, getItems} from "./serviceAxios";
+
+import {createItem, getItems, updateItemAvailability} from "./serviceAxios";
 import ItemList from "./ItemList";
 import ItemForm from "./ItemForm";
 
@@ -24,10 +25,20 @@ class ItemBox extends Component {
             this.getListAndUpdate();
         })
     }
+
+    updateItem = (itemId) => {
+        updateItemAvailability(itemId)
+            .then((response)=> {
+                this.getListAndUpdate();
+                console.log(response);
+        })
+    }
+
     loggedInUser() {
         this.setState({email: sessionStorage.getItem("email"), password: sessionStorage.getItem("password"), id: sessionStorage.getItem("id")})
         console.log(this.state);
     }
+
     // poistaQuote = (poistettavanId) => {
     //     poistaSanonta(poistettavanId)
     //         .then((response)=> {
@@ -42,7 +53,7 @@ class ItemBox extends Component {
 
                 {sessionStorage.getItem("email") != undefined ? <div className="itembox">
                     <ItemForm addItem={this.newItem}/>
-                    <ItemList items={this.state.items}/>
+                    <ItemList items={this.state.items} updateItem={this.updateItem}/>
                 </div> : <div></div>}
             </div>);
     }

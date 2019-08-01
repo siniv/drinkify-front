@@ -3,10 +3,23 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
 class ItemCard extends Component {
+
+    update = () => {
+        console.log(this.props.item.id);
+        console.log(this.props.updateItem)
+        this.props.updateItem(this.props.item.id);
+    }
+
     renderAvailability = (available) => {
         if (available) return <Card.Text className="available">Vapaa</Card.Text>
         else return <Card.Text className="notavailable">Varattu</Card.Text>
     };
+
+    renderButton = (available) => {
+        if (available) return <Button variant="primary" onClick={this.update}>Haluan lainata</Button>
+        else return <Button variant="primary" onClick={this.update}>Peru laina</Button>
+    }
+
     chooseImage = () => {
         if(this.props.item.category === "Tyokalu"){
             return <Card.Img variant="top" src="/images/drill.jpg"/>
@@ -35,7 +48,7 @@ class ItemCard extends Component {
                         </Card.Text>
                         <Card.Text>{this.props.item.category}</Card.Text>
 
-                        <Button variant="primary">Haluan lainata</Button>
+                        {this.renderButton(this.props.item.available)}
                     </Card.Body>
                 </Card>
             </div>

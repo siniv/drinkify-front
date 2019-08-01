@@ -5,6 +5,8 @@ import NavDropdown from "react-bootstrap/NavDropdown"; //saatetaan tarvita viel�
 import {Link} from "react-router-dom";
 import Button from "react-bootstrap/Button";
 
+// Täällä syntyy sivujen navigaatio.
+
 class Navigation extends Component {
 
     render() {

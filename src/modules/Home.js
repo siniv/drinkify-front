@@ -5,7 +5,7 @@ import ItemList from "./ItemList";
 import Container from "react-bootstrap/Container";
 import Jumbotron from "react-bootstrap/Jumbotron";
 
-// Kotisivu, joka palauttaa listan kaikista palvelussa olevista tuotteista.
+// Kotisivu, jossa Jumbotron tekstille, ja johon tulostuu ItemList kaikista palvelussa olevista tuotteista.
 
 class Home extends Component {
     state = {items: []};
@@ -24,18 +24,17 @@ class Home extends Component {
                 this.getListAndUpdate();
                 console.log(response);
             })
-    }
+    };
 
     render() {
 
         return (
             <div className="home">
                 <Jumbotron fluid>
-                <Container>
-                <h1>Tervetuloa Lainaksi - sivuille!</h1>
-                <p>Lainaa ja anna lainaksi. Yhteisöllisyyttää, jakamistaloutta ja hiilijalanjälki.</p>
-
-                </Container>
+                    <Container>
+                        <h1>Tervetuloa Lainaksi - sivuille!</h1>
+                        <p>Lainaa ja anna lainaksi. Yhteisöllisyyttää, jakamistaloutta ja hiilijalanjälki.</p>
+                    </Container>
                 </Jumbotron>
 
                 <ItemList items={this.state.items} updateItem={this.updateItem}/>

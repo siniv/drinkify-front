@@ -4,14 +4,11 @@ import Navigation from "./modules/Navigation";
 import ItemBox from "./modules/ItemBox";
 import ItemSort from "./modules/ItemSort";
 
-
 import Login from "./modules/Login";
 
 import {BrowserRouter as Router, Route, Switch, Redirect, Link} from 'react-router-dom';
 import Nav from "react-bootstrap/Nav";
 import Home from "./modules/Home";
-
-
 
 class App extends Component {
 

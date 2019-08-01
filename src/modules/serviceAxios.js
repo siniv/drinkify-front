@@ -23,3 +23,10 @@ export function createItem(item, callback) {
             callback(response.status);
         });
 }
+
+export function getUser(callback, email) {
+    axios.get("/api/user/getbyemail/" + email)
+        .then(function (user) {
+            callback(user.data);
+        });
+}

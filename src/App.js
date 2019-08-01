@@ -4,6 +4,7 @@ import Navigation from "./modules/Navigation";
 import ItemBox from "./modules/ItemBox";
 import ItemSort from "./modules/ItemSort";
 import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
+import Login from "./modules/Login";
 {/*<div className="App">*/}
 {/*    <Navigation/>*/}
 
@@ -13,6 +14,16 @@ import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom
 
 
 class App extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            email: "",
+            password: "",
+            id:""
+        };
+    }
 
     render() {
         return (
@@ -26,6 +37,7 @@ class App extends Component {
                             {/*<Route path="/quotes" component={QuoteList} />*/}
                             <Route path="/lainaamuille" component={ItemBox} />
                             {/*<Route path="/details" component={QuoteDetails} />*/}
+                            <Route path="/login" exact component={Login} />
                         </Switch>
                     </div>
                 </Router>

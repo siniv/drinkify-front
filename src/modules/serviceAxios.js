@@ -31,3 +31,11 @@ export function getUser(callback, email) {
             callback(user);
         });
 }
+
+export function updateItemAvailability(id){
+    console.log(id);
+    return axios.put(baseurl + "/varaus/"+id)
+        .then(res=> {
+            console.dir(res);
+        });
+}

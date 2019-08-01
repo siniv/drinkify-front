@@ -5,13 +5,15 @@ import Container from "react-bootstrap/Container";
 
 class ItemList extends Component {
     render() {
-        var all = this.props.items.reverse()
+        // const self = this;
+
+        const all = this.props.items.reverse()
             .map(function(item) {
-                return (<ItemCard item={item} key={item.id}/>);
+                return (<ItemCard item={item} updateItem={this.props.updateItem} key={item.id} />);
                 //poisto puuttuu
                 // return (<ItemCard item={item} poista={this.props.poisto} key={item.id}/>);
-            });
-    // }.bind(this));
+            }.bind(this));
+
         return(
             <div>
                 <Container>

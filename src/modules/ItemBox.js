@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {createItem, getItems} from "./serviceAxios";
 import ItemList from "./ItemList";
 import ItemForm from "./ItemForm";
+import Button from "react-bootstrap/Button";
 
 class ItemBox extends Component {
     state = {
@@ -12,7 +13,6 @@ class ItemBox extends Component {
 
     componentDidMount() {
         this.getListAndUpdate()
-        this.loggedInUser()
     }
     getListAndUpdate = () => {
         getItems(list=>{
@@ -39,7 +39,6 @@ class ItemBox extends Component {
 
         return (
             <div>
-
                 {sessionStorage.getItem("email") != undefined ? <div className="itembox">
                     <ItemForm addItem={this.newItem}/>
                     <ItemList items={this.state.items}/>

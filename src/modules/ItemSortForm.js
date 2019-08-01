@@ -5,6 +5,9 @@ import Button from "react-bootstrap/Button";
 import ItemList from "./ItemList";
 import {getItems} from "./serviceAxios";
 
+// Tämä hoitaa kategorian mukaan haun.
+// HUOM! Kategorioiden täytyy olla samat, kuin tuotteen lisäyksessä.
+// HUOM! Ei ääkkösiä, koska kategorian nimi menee osaksi URL:ia / ServiceAxios. (Voisi kiertää esim category ID:llä.)
 
 class ItemSortForm extends Component {
     state = {

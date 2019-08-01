@@ -3,6 +3,10 @@ import {getSortedItems} from "./serviceAxios";
 import ItemSortList from "./ItemSortList";
 import ItemSortForm from "./ItemSortForm";
 
+
+// Hae tuotteita kategorian mukaan. ItemSortForm antaa dropdown-valikon, josta kategoria valitaan.
+// ItemSortList palauttaa CardDeckin, jossa hakuehdon täyttävät tuotteet (ItemCard).
+
 class ItemSort extends Component {
     state = {
         sorteditems: []

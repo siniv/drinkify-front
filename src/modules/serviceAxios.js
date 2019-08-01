@@ -8,7 +8,8 @@ export function getItems(callback) {
         });
 }
 
-// Tämä hakee Itemsit kategoriavalinnan mukaan. ItemSort lähettää kategorian tähän.
+// Tämä hakee Itemsit kategoriavalinnan mukaan. ItemSort lähettää kategorian tähän
+// Kategoria tulee ItemSOrtFormista ja täytyy matchata ItemFormissa tavaralle annettavaan kategoriaan.
 export function getSortedItems(callback, category) {
     axios.get(baseurl + '\\byCategory?haku=' + category)
         .then(function (sorteditems) {

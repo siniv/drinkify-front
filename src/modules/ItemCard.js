@@ -16,8 +16,8 @@ class ItemCard extends Component {
     };
 
     renderButton = (available) => {
-        if (available) return <Button variant="primary" onClick={this.update}>Haluan lainata</Button>
-        else return <Button variant="primary" onClick={this.update}>Peru laina</Button>
+        if (available) return <Button variant="secondary" onClick={this.update}>Haluan lainata</Button>
+        else return <Button variant="secondary" onClick={this.update}>Peru laina</Button>
     }
 
     chooseImage = () => {

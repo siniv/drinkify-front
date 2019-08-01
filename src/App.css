@@ -37,12 +37,14 @@ form{
 }
 
 .available{
-  background-color: lawngreen;
+  background-color: #85FF85;
   color:white;
+  font-weight: bold;
 }
 .notavailable{
-  background-color: red;
+  background-color: #FF5082;
   color: white;
+  font-weight: bold;
 }
 
 .container {
